@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: backendtfgadri
+    env: docker
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        value: base64:GC7pk/isWp7Gh+x97bNr8oAwonwzckpKrPAE6cqryDQ=
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: backendtfgadri-db
+          property: connectionString
+
+databases:
+  - name: backendtfgadri-db
+    plan: free
