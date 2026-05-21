@@ -16,6 +16,10 @@ services:
         fromDatabase:
           name: backendtfgadri-db
           property: connectionString
+      - key: DB_URL
+        fromDatabase:
+          name: backendtfgadri-db
+          property: connectionString
 
 databases:
   - name: backendtfgadri-db
