@@ -20,8 +20,10 @@ class ProductSeeder extends Seeder
             ['name' => 'Loción Fijadora',          'brand' => 'Reuzel',        'price' => 14.90, 'image' => 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80', 'category' => 'Cabello', 'stock' => 9],
         ];
 
-        foreach ($products as $product) {
-            Product::create($product);
+        if (Product::count() === 0) {
+            foreach ($products as $product) {
+                Product::create($product);
+            }
         }
     }
 }
